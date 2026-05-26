@@ -89,7 +89,7 @@ MQTT_PORT = int(os.getenv("MQTT_PORT", "8883"))
 MQTT_USER = os.getenv("MQTT_USER", "")
 MQTT_PASSWORD = os.getenv("MQTT_PASSWORD", "")
 MQTT_TOPIC = os.getenv("MQTT_TOPIC", "vehicles/+/gps")
-MQTT_COMMAND_TOPIC = os.getenv("MQTT_COMMAND_TOPIC", "vehicles/{device_id}/command")
+MQTT_COMMAND_TOPIC = os.getenv("MQTT_COMMAND_TOPIC", "vehicles/{device_id}/cmd")
 MQTT_TLS = os.getenv("MQTT_TLS", "true").lower() in {"1", "true", "yes"}
 MQTT_TLS_INSECURE = os.getenv("MQTT_TLS_INSECURE", "false").lower() in {"1", "true", "yes"}
 
