@@ -448,7 +448,9 @@ def publish_vehicle_command(device_id: str, action: str):
         raise HTTPException(status_code=400, detail="Acción inválida. Use 'on' o 'off'")
 
     topic = MQTT_COMMAND_TOPIC.format(device_id=device_id)
-    payload = "ON" if action_key == "on" else "OFF"
+     payload = json.dumps(
+        "ON" if action_key == "on" else "OFF"
+    )
 
     result = mqtt_client_instance.publish(topic, payload=payload, qos=1)
     if result.rc != mqtt.MQTT_ERR_SUCCESS:
