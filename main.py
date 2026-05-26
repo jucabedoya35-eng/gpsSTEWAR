@@ -449,7 +449,7 @@ def publish_vehicle_command(device_id: str, action: str):
 
     topic = MQTT_COMMAND_TOPIC.format(device_id=device_id)
     payload = json.dumps(
-       "ON" if action_key == "on" else "OFF",
+       ON if action_key == "on" else OFF,
     )
 
     result = mqtt_client_instance.publish(topic, payload=payload, qos=1)
